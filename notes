@@ -1,0 +1,41 @@
+- name: lab 3 Both Hosts
+  hosts: virtualmachines
+  tasks:
+  - name: wget install
+    become: true
+    package: 
+      name: wget
+      state: present
+      update_cache: true
+  - name: install unzip on hosts -b
+    become: yes
+    package:
+      name: unzip
+      state: present
+      update_cache: true
+    when: ansible_host == '35.177.231.51'
+  - name: install nginx on host -name
+    become: yes
+    package: 
+      name: nginx
+      state: present
+      update_cache: true
+    when: ansible_host == '18.170.30.235'
+
+
+
+
+
+
+
+
+
+- name: lab 3 install nginx on vm02
+
+- name: replace default html with new html stored in ansible ec2
+
+- name: print out json object of installing nginx
+
+- name: restart nginx service
+
+- name: install docker 
